@@ -1,0 +1,50 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AAFCD398-F3B6-83A5-274B-117AAAFE4032" name="F15E1_Auth">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>7DC25B81-FF3F-3A79-3516-49A07C1F8432</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="auth_id" id="0465780C-9258-CC01-1F25-0FBD8170AFE1">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>7A5E24E4-E30A-A413-08AD-94FD1E717741</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="right" id="F40C4347-A032-46D6-5665-CF789431DE7F">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>742F1675-C65B-354A-90CD-E5E2358E6A66</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="F2CB069E-1D6D-B1A1-AEC7-03E0A743F941" name="F15E1_Auth_PK">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>D9FFBBCE-1AD8-4BA7-E4F0-F642B564BD4A</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0465780C-9258-CC01-1F25-0FBD8170AFE1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F6061CF7-C101-B7F2-A26F-89882C8D018F" name="F15E1_Comment">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>E36ED8D9-BE53-7B5C-0697-7ED4926B7BB8</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="comment_id" id="0AA78764-5526-5DE0-F3D0-0A3AD183F3A6">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>BAA5A7ED-795E-5467-CBF7-52EDEEF08AF7</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="entry_date" id="492AA65E-F9B5-2AAE-47D7-2F394BDF4C4A">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>7842724E-2FFB-151E-EEA0-005025D6C615</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="entered_by_emp" id="E8A406C1-68DC-C797-481E-E7672CF69FF1">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>F60530F7-774E-FBDB-B4EC-7679B3CEAAC4</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15E1_RFE_rfe_id" id="532A02D6-875E-CAC3-52B3-3DD7845521B6">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>CE57D6C7-4243-1A61-8EFC-3C5B2380C15C</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="74ACA367-9675-D333-8652-6E2DFA1CF6D8" referredColumn="4EDE82A6-1AFA-E8CD-36C4-6DB4755B12B2"/>
+</associations>
+</Column>
+<Column name="comments" id="51A5CD01-72BB-9D79-2F8A-45078E53A41B">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-18 05:36:56 UTC</createdTime>
+<generatorID>A9706007-0700-2B8A-AAE0-EC721EE7EAC4</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D2524D8D-11DA-BE34-2B74-2FD64D03CB69" name="F15E1_Comment_PK">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>F5B92293-6E13-EC06-6F33-E12C91AAC740</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0AA78764-5526-5DE0-F3D0-0A3AD183F3A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E123B14F-CD24-4D1C-B1B6-A07EAA7EE3DD" name="F15E1_Comment_F15E1_RFE_FK">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>CEADE46A-EFD5-612E-3070-ED2264802E4D</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="532A02D6-875E-CAC3-52B3-3DD7845521B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,129 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DECA9F1C-CFD6-D0B0-8116-2F72B36DBC5A" name="F15E1_RFE">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:48:50 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rfe_id" id="0B148033-AB1B-E919-C8F2-5B472D4B6B36">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:48:58 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="10ACF7C4-AA72-43C4-9C94-4B6CB6D5F53D">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-21 22:37:55 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="explanation" id="7590C141-DF39-C83A-B5D5-EF6293B0AB73">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:49:09 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="alt_protections" id="97AA2027-7CF5-AB82-03B0-EDDF8EE8B35E">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:49:22 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="appr_review_date" id="538AB774-A73C-328E-3670-B4FECBCF8BD3">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:49:36 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status_id" id="3DB60881-3174-8C31-F7AD-BEFCB34F4603">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:52:18 UTC</createdTime>
+<generatorID>98F25ED4-50A4-8A18-B911-A2EF7109F09B</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<referedAttribute>CC3A3BDB-4F2C-D06A-045F-D5A5FF7C83B0</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="emp_id" id="AFC183D2-A790-B950-4101-E5120B3C652C">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 19:06:11 UTC</createdTime>
+<generatorID>34C17A58-DBFD-D5D5-FD92-E8C0488F2220</generatorID>
+<ownerDesignName>conceptual model</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<referedAttribute>71D91207-0370-FCF1-AECD-E93EEF7B6D2F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="EF5C59D4-9782-005C-54CE-8CE3A2E66F9B" name="F15E1_RFE PK">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:49:07 UTC</createdTime>
+<ownerDesignName>conceptual model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>0B148033-AB1B-E919-C8F2-5B472D4B6B36</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="957DF472-5F6C-DC31-4DE9-A79BAA4E1E97" name="F15E1_Comment">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-02 22:36:43 UTC</createdTime>
+<ownerDesignName>f15e1_conceptual</ownerDesignName>
+<engineerTo>
+<item key="66467C0C-760A-5FB5-D499-51B78802F986" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comment_id" id="375315F6-078E-A6FB-BFBB-713F4C3CDE61">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-02 22:36:52 UTC</createdTime>
+<ownerDesignName>f15e1_conceptual</ownerDesignName>
+<engineerTo>
+<item key="66467C0C-760A-5FB5-D499-51B78802F986" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="DA26FABA-FC63-C34F-10B9-EC6971BAAFC0">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-02 22:38:02 UTC</createdTime>
+<generatorID>E7154A1D-8B43-BA51-6964-F17CE8633538</generatorID>
+<ownerDesignName>f15e1_conceptual</ownerDesignName>
+<engineerTo>
+<item key="66467C0C-760A-5FB5-D499-51B78802F986" value="true"/>
+</engineerTo>
+<referedAttribute>A6EC3F12-63E4-63DA-C5B5-40767CC60125</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="entry_date" id="6FE9FA84-014E-91D6-0C5A-6046BB058ACD">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:22:04 UTC</createdTime>
+<ownerDesignName>f15e1_conceptual</ownerDesignName>
+<engineerTo>
+<item key="66467C0C-760A-5FB5-D499-51B78802F986" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="entered_by_emp" id="E17BE51E-4A43-0898-A703-2A255FB33AAA">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:22:21 UTC</createdTime>
+<ownerDesignName>f15e1_conceptual</ownerDesignName>
+<engineerTo>
+<item key="66467C0C-760A-5FB5-D499-51B78802F986" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4C0FD0C9-53DB-CCB8-5B9F-E8BCA4333C57" name="F15E1_Comment PK">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-02 22:37:03 UTC</createdTime>
+<ownerDesignName>f15e1_conceptual</ownerDesignName>
+<engineerTo>
+<item key="66467C0C-760A-5FB5-D499-51B78802F986" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>375315F6-078E-A6FB-BFBB-713F4C3CDE61</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

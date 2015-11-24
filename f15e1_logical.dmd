@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="f15e1_logical" id="9789DABF-99C8-C15A-A104-FB9F49B0EA5B" version="3.5">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:38:12 UTC</createdTime>
+<ownerDesignName>F15E1 Final Logical Data Model</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>9789DABF-99C8-C15A-A104-FB9F49B0EA5B</designId>
+</OSDM_Design>

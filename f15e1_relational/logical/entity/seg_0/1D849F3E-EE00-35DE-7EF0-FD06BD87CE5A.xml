@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1D849F3E-EE00-35DE-7EF0-FD06BD87CE5A" name="F15E1_Lab">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:41:53 UTC</createdTime>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="lab_id" id="4C10ACB4-46BC-98DE-E653-2172D75450E5">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:42:03 UTC</createdTime>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="5179E709-BEBE-8E0B-B015-E1A5D99CA3EF">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:42:16 UTC</createdTime>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255</dataTypeSize>
+<ownDataTypeParameters>255,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="lab_code" id="3ADA1859-E7EA-4F2C-8249-CA3F6E9DBC9C">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-21 22:39:52 UTC</createdTime>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="401AD583-5AE2-F9C6-EE3C-7F1956854FED" name="F15E1_Lab PK">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:42:14 UTC</createdTime>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4C10ACB4-46BC-98DE-E653-2172D75450E5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

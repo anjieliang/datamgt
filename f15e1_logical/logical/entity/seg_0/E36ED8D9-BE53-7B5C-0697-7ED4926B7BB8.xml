@@ -1,0 +1,100 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E36ED8D9-BE53-7B5C-0697-7ED4926B7BB8" name="F15E1_Comment">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:58:17 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="comment_id" id="BAA5A7ED-795E-5467-CBF7-52EDEEF08AF7">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:58:24 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="entry_date" id="7842724E-2FFB-151E-EEA0-005025D6C615">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:58:35 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="entered_by_emp" id="F60530F7-774E-FBDB-B4EC-7679B3CEAAC4">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:58:47 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rfe_id" id="CE57D6C7-4243-1A61-8EFC-3C5B2380C15C">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:59:04 UTC</createdTime>
+<generatorID>CEADE46A-EFD5-612E-3070-ED2264802E4D</generatorID>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<referedAttribute>0B148033-AB1B-E919-C8F2-5B472D4B6B36</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comments" id="A9706007-0700-2B8A-AAE0-EC721EE7EAC4">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-18 05:36:35 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="F5B92293-6E13-EC06-6F33-E12C91AAC740" name="F15E1_Comment PK">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:58:32 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>BAA5A7ED-795E-5467-CBF7-52EDEEF08AF7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

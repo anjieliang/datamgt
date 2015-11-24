@@ -1,0 +1,89 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="34209615-0410-E67D-C9A9-1E8A0422D53B" name="F15E1_Contact_RFE">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>197A574B-D11B-3EF6-233E-F7A7880FBE90</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="contact_rfe_id" id="07311581-8549-BDFA-DBDC-4920DAEBA890">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>C515CCD5-E632-8752-CB00-BC5F635427D7</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="F15E1_RFE_rfe_id" id="20F3554C-0795-2F12-2B60-3D1FE62332B8">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>93F71FA5-1CB7-95FE-72A8-C8AC9205B146</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="4E6F9FEB-45BE-4789-85F5-F7CE708B62C7" referredColumn="4EDE82A6-1AFA-E8CD-36C4-6DB4755B12B2"/>
+</associations>
+</Column>
+<Column name="F15E1_Emp_emp_id" id="C42D74AA-C3BE-9ED3-A8DB-14730A39190A">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>72240D13-ED6A-0EDD-90C5-EF46427203CD</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DEF1E15C-850C-9961-0776-53E0B6A12ABF" referredColumn="C0F149ED-9D79-7F28-0CB5-34166141C207"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="16D3BF48-5618-532C-E4CF-771DF74F77C2" name="F15E1_Req_RFE_PK">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>18F5F08B-2A9B-C351-907B-91990DD6BD55</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="07311581-8549-BDFA-DBDC-4920DAEBA890"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C5171199-0311-602E-465C-35F7C3432082" name="F15E1_Req_RFE_F15E1_RFE_FK">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>5218D954-5C0E-6143-604D-3CD327F81216</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="20F3554C-0795-2F12-2B60-3D1FE62332B8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="07EB982D-A078-8B59-FE8E-A90776C48363" name="F15E1_Req_RFE_F15E1_Emp_FK">
+<createdBy>anjieliang</createdBy>
+<createdTime>2015-11-13 03:04:39 UTC</createdTime>
+<generatorID>9C1CC412-8782-10D8-E720-5EE8CCA107C5</generatorID>
+<ownerDesignName>f15e1_relational</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C42D74AA-C3BE-9ED3-A8DB-14730A39190A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

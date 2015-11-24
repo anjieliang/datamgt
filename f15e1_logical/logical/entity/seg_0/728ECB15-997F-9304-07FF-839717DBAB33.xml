@@ -1,0 +1,87 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="728ECB15-997F-9304-07FF-839717DBAB33" name="F15E1_Status">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:51:04 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="status_id" id="CC3A3BDB-4F2C-D06A-045F-D5A5FF7C83B0">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:51:11 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status" id="37EDD0DF-D841-A76D-0A15-97021D2635F8">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:51:22 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="description" id="F7852387-2694-7842-C33D-115E3EBD931E">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:51:33 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500</dataTypeSize>
+<ownDataTypeParameters>500,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="entered_by_emp" id="E6941711-A723-DC84-2D2B-EB963BB5BAF1">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:51:56 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="88A4E7C7-7631-909A-DD3A-FFE1CFD12964" name="F15E1_Status PK">
+<createdBy>Christine</createdBy>
+<createdTime>2015-11-12 18:51:19 UTC</createdTime>
+<ownerDesignName>f15e1_logical</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="00C5C582-7010-A052-02BB-11E987A25FE7" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CC3A3BDB-4F2C-D06A-045F-D5A5FF7C83B0</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

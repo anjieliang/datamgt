@@ -1,0 +1,295 @@
+drop view F15E1_Emp_view ;
+drop view F15E1_Chair_view ;
+drop view F15E1_ExecDir_view ;
+drop view F15E1_Admin_view ;
+drop view F15E1_LabDir_view ;
+
+create view F15E1_Emp_view as
+SELECT 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag
+FROM F15E1_Emp where type = 'Employee' ;
+
+create or replace TRIGGER F15E1_Emp_trigger
+     INSTEAD OF insert ON F15E1_Emp_view
+     FOR EACH ROW
+BEGIN
+    insert into F15E1_Emp( 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag)
+    VALUES ( 
+    :NEW.emp_id,
+    'Employee',
+    :NEW.status,
+    :NEW.name,
+    :NEW.email,
+    :NEW.office,
+    :NEW.phone,
+    :NEW.status_eff_date,
+    :NEW.description,
+    :NEW.F15E1_Lab_lab_id,
+    :NEW.F15E1_Auth_auth_id,
+    :NEW.admin_flag,
+    :NEW.labdir_flag,
+    :NEW.execdir_flag,
+    :NEW.chair_flag) ;
+END;
+/
+
+create view F15E1_Chair_view as
+SELECT 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag
+FROM F15E1_Emp where type = 'Chairperson' ;
+
+create or replace TRIGGER F15E1_Chair_trigger
+     INSTEAD OF insert ON F15E1_Chair_view
+     FOR EACH ROW
+BEGIN
+    insert into F15E1_Emp( 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag)
+    VALUES ( 
+    :NEW.emp_id,
+    'Chairperson',
+    :NEW.status,
+    :NEW.name,
+    :NEW.email,
+    :NEW.office,
+    :NEW.phone,
+    :NEW.status_eff_date,
+    :NEW.description,
+    :NEW.F15E1_Lab_lab_id,
+    :NEW.F15E1_Auth_auth_id,
+    'N',
+    'N',
+    'N',
+    'Y') ;
+END;
+/
+
+create view F15E1_ExecDir_view as
+SELECT 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag
+FROM F15E1_Emp where type = 'Executive Director' ;
+
+create or replace TRIGGER F15E1_ExecDir_trigger
+     INSTEAD OF insert ON F15E1_ExecDir_view
+     FOR EACH ROW
+BEGIN
+    insert into F15E1_Emp( 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag)
+    VALUES ( 
+    :NEW.emp_id,
+    'Executive Director',
+    :NEW.status,
+    :NEW.name,
+    :NEW.email,
+    :NEW.office,
+    :NEW.phone,
+    :NEW.status_eff_date,
+    :NEW.description,
+    :NEW.F15E1_Lab_lab_id,
+    :NEW.F15E1_Auth_auth_id,
+    'N',
+    'N',
+    'Y',
+    'N') ;
+END;
+/
+
+create view F15E1_Admin_view as
+SELECT 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag
+FROM F15E1_Emp where type = 'Lab System Administrator' ;
+
+create or replace TRIGGER F15E1_Admin_trigger
+     INSTEAD OF insert ON F15E1_Admin_view
+     FOR EACH ROW
+BEGIN
+    insert into F15E1_Emp( 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag)
+    VALUES ( 
+    :NEW.emp_id,
+    'Lab System Administrator',
+    :NEW.status,
+    :NEW.name,
+    :NEW.email,
+    :NEW.office,
+    :NEW.phone,
+    :NEW.status_eff_date,
+    :NEW.description,
+    :NEW.F15E1_Lab_lab_id,
+    :NEW.F15E1_Auth_auth_id,
+    'Y',
+    'N',
+    'N',
+    'N') ;
+END;
+/
+
+create view F15E1_LabDir_view as
+SELECT 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag
+FROM F15E1_Emp where type = 'Lab Director' ;
+
+create or replace TRIGGER F15E1_LabDir_trigger
+     INSTEAD OF insert ON F15E1_LabDir_view
+     FOR EACH ROW
+BEGIN
+    insert into F15E1_Emp( 
+    emp_id,
+    type,
+    status,
+    name,
+    email,
+    office,
+    phone,
+    status_eff_date,
+    description,
+    F15E1_Lab_lab_id,
+    F15E1_Auth_auth_id,
+    admin_flag,
+    labdir_flag,
+    execdir_flag,
+    chair_flag)
+    VALUES ( 
+    :NEW.emp_id,
+    'Lab Director',
+    :NEW.status,
+    :NEW.name,
+    :NEW.email,
+    :NEW.office,
+    :NEW.phone,
+    :NEW.status_eff_date,
+    :NEW.description,
+    :NEW.F15E1_Lab_lab_id,
+    :NEW.F15E1_Auth_auth_id,
+    'N',
+    'Y',
+    'N',
+    'N') ;
+END;
+/

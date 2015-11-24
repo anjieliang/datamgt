@@ -1,0 +1,183 @@
+alter table f15e1_appr_rfe disable constraint F15E1_Appr_RFE_F15E1_Emp_FK; 
+alter table f15e1_appr_rfe disable constraint F15E1_Appr_RFE_F15E1_RFE_FK; 
+alter table f15e1_comment disable constraint F15E1_Comment_F15E1_RFE_FK; 
+alter table f15e1_doc disable constraint F15E1_Doc_F15E1_RFE_FK; 
+alter table f15e1_emp disable constraint F15E1_Emp_F15E1_Auth_FK; 
+alter table f15e1_emp disable constraint F15E1_Emp_F15E1_Lab_FK; 
+alter table f15e1_rfe disable constraint F15E1_RFE_F15E1_Emp_FK; 
+alter table f15e1_rfe disable constraint F15E1_RFE_F15E1_Status_FK; 
+alter table f15e1_rfe_task disable constraint F15E1_RFE_Task_F15E1_RFE_FK; 
+alter table f15e1_rfe_task disable constraint F15E1_RFE_Task_F15E1_Task_FK; 
+alter table f15e1_contact_rfe disable constraint F15E1_Contact_RFE_F15E1_Emp_FK; 
+alter table f15e1_contact_rfe disable constraint F15E1_Contact_RFE_F15E1_RFE_FK; 
+alter table f15e1_stathis disable constraint F15E1_StatHis_F15E1_RFE_FK; 
+
+-- Truncate each of the sample data tables using the following statement:
+truncate table f15e1_appr_rfe; 
+truncate table f15e1_auth; 
+truncate table f15e1_comment; 
+truncate table f15e1_doc; 
+truncate table f15e1_emp; 
+truncate table f15e1_lab; 
+truncate table f15e1_rfe; 
+truncate table f15e1_rfe_task; 
+truncate table f15e1_contact_rfe; 
+truncate table f15e1_stathis; 
+truncate table f15e1_status; 
+truncate table f15e1_task;
+
+-- Disable the PK triggers on the sample data tables using the following statement:
+alter trigger f15e1_appr_rfe_pk_trig disable; 
+alter trigger f15e1_auth_pk_trig disable;
+alter trigger f15e1_comment_pk_trig disable;
+alter trigger f15e1_doc_pk_trig disable;
+alter trigger f15e1_emp_pk_trig disable;
+alter trigger f15e1_lab_pk_trig disable;
+alter trigger f15e1_rfe_task_pk_trig disable;
+alter trigger f15e1_contact_rfe_pk_trig disable;
+alter trigger f15e1_stathis_pk_trig disable;
+alter trigger f15e1_status_pk_trig disable;
+alter trigger f15e1_task_pk_trig disable;
+
+-- Put all of the sample data INSERT statements here. Be sure to use PK and FK values that
+-- are < 100 so that they won't be reapeated by the PK triggers when they are re-enabled.
+/* LAB INSERTS */
+INSERT INTO F15E1_LAB (LAB_ID, NAME, LAB_CODE) VALUES (10, 'CHEMISTRY', 'CHEM');
+INSERT INTO F15E1_LAB (LAB_ID, NAME, LAB_CODE) VALUES (20, 'BIOLOGY', 'BIO');
+INSERT INTO F15E1_LAB (LAB_ID, NAME, LAB_CODE) VALUES (30, 'MECHANICAL', 'MECH');
+
+/* AUTH INSERTS */
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (1, 'edit');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (2, 'edit');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (3, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (4, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (5, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (6, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (7, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (8, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (9, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (10, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (11, 'none');
+INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (12, 'none');
+-- INSERT INTO F15E1_AUTH (AUTH_ID, RIGHT) VALUES (50, 'view');
+
+/* TASK INSERTS */
+INSERT INTO F15E1_TASK (TASK_ID, ABBREVIATION, DESCRIPTION) VALUES (1, 'SLDR', 'Do a good soldering job!');
+INSERT INTO F15E1_TASK (TASK_ID, ABBREVIATION, DESCRIPTION) VALUES (2, 'LC', 'Go laser cut some metal.');
+INSERT INTO F15E1_TASK (TASK_ID, ABBREVIATION, DESCRIPTION) VALUES (3, 'CULT', 'Culture some bacteria.');
+INSERT INTO F15E1_TASK (TASK_ID, ABBREVIATION, DESCRIPTION) VALUES (4, 'EX', 'Examine specimens.');
+INSERT INTO F15E1_TASK (TASK_ID, ABBREVIATION, DESCRIPTION) VALUES (5, 'MIX', 'Mix some chemicals.');
+INSERT INTO F15E1_TASK (TASK_ID, ABBREVIATION, DESCRIPTION) VALUES (6, 'IC', 'Make some vanilla ice cream!');
+
+
+/* STATUS INSERTS */
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (1, 'Entered', 'The RFE has been created but has not yet been submitted for approval.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (2, 'Submitted', 'The RFE has been submitted to the Lab System Administrator for approval.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (3, 'Returned', 'The RFE has been returned for further information or clarification. Once
+Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (4, 'Recalled', 'The requestor has recalled an RFE that has not yet reached final approval.
+Once Submitted again, it will follow the same routing as an Entered RFE.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (5, 'Rejected', 'The RFE has been rejected and cannot be implemented.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (6, 'SA Approved', 'The Lab System Administrator has approved the RFE; it has been submitted for
+Lab Director approval.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (7, 'LD Approved', 'The Lab Director has approved the RFE; it has been submitted for Network
+Security Panel approval.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (8, 'CH Approved', 'The Network Security Panel has approved the RFE; it has been submitted to the
+Executive Director''s Office for approval.');
+INSERT INTO F15E1_STATUS (STATUS_ID, STATUS, DESCRIPTION) VALUES
+  (9, 'Final Approved', 'The Executive Director''s Office has given final approval for the RFE and it may
+be implemented.');
+
+
+/* CHAIRPERSON AND EXECUTIVE DIRECTOR */
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (70, 'CHAIRPERSON',  'A', 'RAYMOND CHEE', 'RAYMOND_CHEE@GMAIL.COM', 'AUSTIN', '12345678', 
+        TO_DATE('17-DEC-1980', 'DD-MON-YYYY'),  'THE AWESOME CHAIRPERSON OF ALL LABS', 30, 1, 'N', 'N', 'N', 'Y');
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (71, 'EXECUTIVE DIRECTOR',  'A', 'JO BRIDGWATER', 'JO_BRIDGWATER@GMAIL.COM', 'HOUSTON', '23456789', 
+        TO_DATE('09-JUL-2001', 'DD-MON-YYYY'),  'THE COOL EXECUTIVE DIRECTOR OF ALL LABS', 30, 2, 'N', 'N', 'Y', 'N');
+
+/* CHEMISTRY LAB EMPLOYEES */
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (72, 'LAB DIRECTOR',  'A', 'ANJIE LIANG', 'ANJIE_LIANG@GMAIL.COM', 'DALLAS', '34567891', 
+        TO_DATE('23-FEB-2006', 'DD-MON-YYYY'),  'THE LAB DIRECTOR OF THE CHEMISTRY LAB', 10, 3, 'N', 'Y', 'N', 'N');
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (73, 'LAB SYSTEM ADMINISTRATOR',  'A', 'CHRISTINE YANG', 'CHRISTINE_YANG@GMAIL.COM', 'TOKYO', '45678912', 
+        TO_DATE('12-MAY-1998', 'DD-MON-YYYY'),  'THE LAB SYSTEM ADMINISTRATOR OF THE CHEMISTRY LAB', 10, 4, 'Y', 'N', 'N', 'N');
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (74, 'EMPLOYEE',  'A', 'CHRIS SUN', 'CHRIS_SUN@GMAIL.COM', 'DALLAS', '48393758', 
+        TO_DATE('19-MAR-2000', 'DD-MON-YYYY'),  'EMPLOYEE OF THE CHEMISTRY LAB', 10, 5, 'N', 'N', 'N', 'N');
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (75, 'EMPLOYEE',  'A', 'MICHAEL LI', 'MICHAEL_LI@GMAIL.COM', 'SEATTLE', '10392639', 
+        TO_DATE('21-SEP-1999', 'DD-MON-YYYY'),  'EMPLOYEE OF THE CHEMISTRY LAB', 10, 6, 'N', 'N', 'N', 'N');
+
+/* BIOLOGY LAB EMPLOYEES */
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (76, 'LAB DIRECTOR',  'A', 'ALVIN DENG', 'ALVIN_DENG@GMAIL.COM', 'TAIPEI', '56789123', 
+        TO_DATE('31-MAY-2012', 'DD-MON-YYYY'),  'THE LAB DIRECTOR OF THE BIOLOGY LAB', 20, 7, 'N', 'Y', 'N', 'N');
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (77, 'LAB SYSTEM ADMINISTRATOR',  'A', 'CAROLYN TRAN', 'CAROLYN_TRAN@GMAIL.COM', 'SEATTLE', '67891234', 
+        TO_DATE('15-JAN-1987', 'DD-MON-YYYY'),  'THE LAB SYSTEM ADMINISTRATOR OF THE BIOLOGY LAB', 20, 8, 'Y', 'N', 'N', 'N');
+ INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (78, 'EMPLOYEE',  'A', 'SARAH WANG', 'SARAH_WANG@GMAIL.COM', 'HOUSTON', '48047139', 
+        TO_DATE('24-DEC-2005', 'DD-MON-YYYY'),  'EMPLOYEE OF THE BIOLOGY LAB', 20, 9, 'N', 'N', 'N', 'N');
+
+/* MECHANICAL LAB EMPLOYEES */
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (79, 'LAB DIRECTOR',  'A', 'CHRIS DENNY', 'CHRIS_DENNY@GMAIL.COM', 'SYDNEY', '78912345', 
+        TO_DATE('03-NOV-2011', 'DD-MON-YYYY'),  'THE LAB DIRECTOR OF THE MECHANICAL LAB', 30, 10, 'N', 'Y', 'N', 'N');
+INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (80, 'LAB SYSTEM ADMINISTRATOR',  'A', 'ANGELA XIE', 'ANGELA_XIE@GMAIL.COM', 'BERKELEY', '89123456', 
+        TO_DATE('06-JUNE-2003', 'DD-MON-YYYY'),  'THE LAB SYSTEM ADMINISTRATOR OF THE MECHANICAL LAB', 30, 11, 'Y', 'N', 'N', 'N');
+ INSERT INTO F15E1_EMP (EMP_ID, TYPE, STATUS, NAME, EMAIL, OFFICE, PHONE, STATUS_EFF_DATE, DESCRIPTION, F15E1_LAB_LAB_ID, 
+  F15E1_AUTH_AUTH_ID, ADMIN_FLAG, LABDIR_FLAG, EXECDIR_FLAG, CHAIR_FLAG) VALUES
+        (81, 'EMPLOYEE',  'A', 'VIRIN TAMPRATEEP', 'VIRIN_TAMPRATEEP@GMAIL.COM', 'AUSTIN', '50285921', 
+        TO_DATE('28-OCT-2014', 'DD-MON-YYYY'),  'EMPLOYEE OF THE MECHANICAL LAB', 30, 12, 'N', 'N', 'N', 'N');
+
+ commit;
+
+alter table f15e1_appr_rfe enable constraint F15E1_Appr_RFE_F15E1_Emp_FK; 
+alter table f15e1_appr_rfe enable constraint F15E1_Appr_RFE_F15E1_RFE_FK; 
+alter table f15e1_comment enable constraint F15E1_Comment_F15E1_RFE_FK; 
+alter table f15e1_doc enable constraint F15E1_Doc_F15E1_RFE_FK; 
+alter table f15e1_emp enable constraint F15E1_Emp_F15E1_Auth_FK; 
+alter table f15e1_emp enable constraint F15E1_Emp_F15E1_Lab_FK; 
+alter table f15e1_rfe enable constraint F15E1_RFE_F15E1_Emp_FK; 
+alter table f15e1_rfe enable constraint F15E1_RFE_F15E1_Status_FK; 
+alter table f15e1_rfe_task enable constraint F15E1_RFE_Task_F15E1_RFE_FK; 
+alter table f15e1_rfe_task enable constraint F15E1_RFE_Task_F15E1_Task_FK; 
+alter table f15e1_contact_rfe enable constraint F15E1_Contact_RFE_F15E1_Emp_FK; 
+alter table f15e1_contact_rfe enable constraint F15E1_Contact_RFE_F15E1_RFE_FK; 
+alter table f15e1_stathis enable constraint F15E1_StatHis_F15E1_RFE_FK; 
+
+-- Enable the PK triggers on the sample data tables using the following statement:
+alter trigger f15e1_appr_rfe_pk_trig enable;
+alter trigger f15e1_auth_pk_trig enable;
+alter trigger f15e1_comment_pk_trig enable;
+alter trigger f15e1_doc_pk_trig enable;
+alter trigger f15e1_emp_pk_trig enable;
+alter trigger f15e1_lab_pk_trig enable;
+alter trigger f15e1_rfe_task_pk_trig enable;
+alter trigger f15e1_contact_rfe_pk_trig enable;
+alter trigger f15e1_stathis_pk_trig enable;
+alter trigger f15e1_status_pk_trig enable;
+alter trigger f15e1_task_pk_trig enable;

@@ -1,0 +1,225 @@
+DROP SEQUENCE F15E1_Appr_RFE_seq ; 
+create sequence F15E1_Appr_RFE_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Appr_RFE_PK_trig 
+; 
+
+create or replace trigger F15E1_Appr_RFE_PK_trig 
+before insert on F15E1_Appr_RFE
+for each row 
+begin 
+select F15E1_Appr_RFE_seq.nextval into :new.appr_rfe_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15E1_Auth_seq ; 
+create sequence F15E1_Auth_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Auth_PK_trig 
+; 
+
+create or replace trigger F15E1_Auth_PK_trig 
+before insert on F15E1_Auth
+for each row 
+begin 
+select F15E1_Auth_seq.nextval into :new.auth_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15E1_Comment_seq ; 
+create sequence F15E1_Comment_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Comment_PK_trig 
+; 
+
+create or replace trigger F15E1_Comment_PK_trig 
+before insert on F15E1_Comment
+for each row 
+begin 
+select F15E1_Comment_seq.nextval into :new.comment_id from dual;
+:new.entered_by_emp := v('P2_EMP');
+:new.entry_date := SYSDATE;
+if :NEW.f15e1_rfe_rfe_id IS NULL THEN
+    :NEW.f15e1_rfe_rfe_id := v('P23_RFE_ID');
+end if;
+end; 
+/
+
+DROP SEQUENCE F15E1_Doc_seq ; 
+create sequence F15E1_Doc_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Doc_PK_trig 
+; 
+
+create or replace trigger F15E1_Doc_PK_trig 
+before insert on F15E1_Doc
+for each row 
+begin 
+select F15E1_Doc_seq.nextval into :new.document_id from dual; 
+:NEW.f15e1_rfe_rfe_id := v('P23_RFE_ID');
+end; 
+/
+
+DROP SEQUENCE F15E1_Emp_seq ; 
+create sequence F15E1_Emp_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Emp_PK_trig 
+; 
+
+create or replace trigger F15E1_Emp_PK_trig 
+before insert on F15E1_Emp
+for each row 
+begin 
+select F15E1_Emp_seq.nextval into :new.emp_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15E1_Lab_seq ; 
+create sequence F15E1_Lab_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Lab_PK_trig 
+; 
+
+create or replace trigger F15E1_Lab_PK_trig 
+before insert on F15E1_Lab
+for each row 
+begin 
+select F15E1_Lab_seq.nextval into :new.lab_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15E1_RFE_Task_seq ; 
+create sequence F15E1_RFE_Task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_RFE_Task_PK_trig 
+; 
+
+create or replace trigger F15E1_RFE_Task_PK_trig 
+before insert on F15E1_RFE_Task
+for each row 
+begin 
+select F15E1_RFE_Task_seq.nextval into :new.rfe_task_id from dual; 
+if :NEW.f15e1_rfe_rfe_id IS NULL THEN
+    :NEW.f15e1_rfe_rfe_id := v('P23_RFE_ID');
+end if;
+end; 
+/
+
+DROP SEQUENCE F15E1_Contact_RFE_seq ; 
+create sequence F15E1_Contact_RFE_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Contact_RFE_PK_trig 
+; 
+
+create or replace trigger F15E1_Contact_RFE_PK_trig 
+before insert on F15E1_Contact_RFE
+for each row 
+begin 
+select F15E1_Contact_RFE_seq.nextval into :new.contact_RFE_id from dual; 
+if :NEW.f15e1_rfe_rfe_id IS NULL THEN
+    :NEW.f15e1_rfe_rfe_id := v('P21_RFE_ID');
+end if;
+end; 
+/
+
+DROP SEQUENCE F15E1_StatHis_seq ; 
+create sequence F15E1_StatHis_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_StatHis_PK_trig 
+; 
+
+create or replace trigger F15E1_StatHis_PK_trig 
+before insert on F15E1_StatHis
+for each row 
+begin 
+select F15E1_StatHis_seq.nextval into :new.hist_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15E1_Status_seq ; 
+create sequence F15E1_Status_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Status_PK_trig 
+; 
+
+create or replace trigger F15E1_Status_PK_trig 
+before insert on F15E1_Status
+for each row 
+begin 
+select F15E1_Status_seq.nextval into :new.status_id from dual; 
+end; 
+/
+
+DROP SEQUENCE F15E1_Task_seq ; 
+create sequence F15E1_Task_seq 
+start with 100 
+increment by 1 
+nomaxvalue 
+;
+DROP TRIGGER F15E1_Task_PK_trig 
+; 
+
+create or replace trigger F15E1_Task_PK_trig 
+before insert on F15E1_Task
+for each row 
+begin 
+select F15E1_Task_seq.nextval into :new.task_id from dual; 
+end; 
+/
+
+DROP INDEX F15E1_Emp_emp_id_FK_0 ;
+CREATE INDEX F15E1_Emp_emp_id_FK_0 ON F15E1_Appr_RFE(F15E1_Emp_emp_id) ;
+DROP INDEX F15E1_RFE_rfe_id_FK_1 ;
+CREATE INDEX F15E1_RFE_rfe_id_FK_1 ON F15E1_Appr_RFE(F15E1_RFE_rfe_id) ;
+DROP INDEX F15E1_RFE_rfe_id_FK_2 ;
+CREATE INDEX F15E1_RFE_rfe_id_FK_2 ON F15E1_Comment(F15E1_RFE_rfe_id) ;
+DROP INDEX F15E1_RFE_rfe_id_FK_3 ;
+CREATE INDEX F15E1_RFE_rfe_id_FK_3 ON F15E1_Doc(F15E1_RFE_rfe_id) ;
+DROP INDEX F15E1_Auth_auth_id_FK_4 ;
+CREATE INDEX F15E1_Auth_auth_id_FK_4 ON F15E1_Emp(F15E1_Auth_auth_id) ;
+DROP INDEX F15E1_Lab_lab_id_FK_5 ;
+CREATE INDEX F15E1_Lab_lab_id_FK_5 ON F15E1_Emp(F15E1_Lab_lab_id) ;
+DROP INDEX F15E1_Emp_emp_id_FK_6 ;
+CREATE INDEX F15E1_Emp_emp_id_FK_6 ON F15E1_RFE(F15E1_Emp_emp_id) ;
+DROP INDEX F15E1_Status_status_id_FK_7 ;
+CREATE INDEX F15E1_Status_status_id_FK_7 ON F15E1_RFE(F15E1_Status_status_id) ;
+DROP INDEX F15E1_RFE_rfe_id_FK_8 ;
+CREATE INDEX F15E1_RFE_rfe_id_FK_8 ON F15E1_RFE_Task(F15E1_RFE_rfe_id) ;
+DROP INDEX F15E1_Task_task_id_FK_9 ;
+CREATE INDEX F15E1_Task_task_id_FK_9 ON F15E1_RFE_Task(F15E1_Task_task_id) ;
+DROP INDEX F15E1_Emp_emp_id_FK_10 ;
+CREATE INDEX F15E1_Emp_emp_id_FK_10 ON F15E1_Contact_RFE(F15E1_Emp_emp_id) ;
+DROP INDEX F15E1_RFE_rfe_id_FK_11 ;
+CREATE INDEX F15E1_RFE_rfe_id_FK_11 ON F15E1_Contact_RFE(F15E1_RFE_rfe_id) ;
+DROP INDEX F15E1_RFE_rfe_id_FK_12 ;
+CREATE INDEX F15E1_RFE_rfe_id_FK_12 ON F15E1_StatHis(F15E1_RFE_rfe_id) ;

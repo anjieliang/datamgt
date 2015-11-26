@@ -27,7 +27,7 @@ prompt APPLICATION 100331 - F15E1 ARL RFE (Important Copy)
 -- Application Export:
 --   Application:     100331
 --   Name:            F15E1 ARL RFE (Important Copy)
---   Date and Time:   04:35 Thursday November 26, 2015
+--   Date and Time:   04:51 Thursday November 26, 2015
 --   Exported By:     ANJIELIANG96@GMAIL.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -112,7 +112,7 @@ wwv_flow_api.create_flow(
 ,p_rejoin_existing_sessions=>'N'
 ,p_csv_encoding=>'Y'
 ,p_last_updated_by=>'ANJIELIANG96@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20151126043420'
+,p_last_upd_yyyymmddhh24miss=>'20151126045059'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_ui_type_name => null
 );
@@ -10277,7 +10277,7 @@ wwv_flow_api.create_page(
 ,p_cache_mode=>'NOCACHE'
 ,p_help_text=>'No help is available for this page.'
 ,p_last_updated_by=>'ANJIELIANG96@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20151126043420'
+,p_last_upd_yyyymmddhh24miss=>'20151126045059'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(18522727551167803599)
@@ -10307,7 +10307,7 @@ wwv_flow_api.create_page_plug(
 'R."EXPLANATION",',
 'R."ALT_PROTECTIONS",',
 'R."APPR_REVIEW_DATE",',
-'E."NAME" AS "REQUESTED BY",',
+'E2."NAME" AS "REQUESTED BY",',
 'S."STATUS"',
 'from "#OWNER#"."F15E1_RFE" R JOIN "#OWNER#"."F15E1_CONTACT_RFE" C',
 ' on C."F15E1_RFE_RFE_ID" = R."RFE_ID"',
@@ -10315,6 +10315,8 @@ wwv_flow_api.create_page_plug(
 ' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
 ' JOIN "F15E1_EMP" E ON',
 ' E."EMP_ID" = C."F15E1_EMP_EMP_ID"',
+' JOIN "F15E1_EMP" E2 ON',
+' E2."EMP_ID" = R."F15E1_EMP_EMP_ID"',
 'WHERE E.EMP_ID = :P2_EMP ',
 'AND R."APPR_REVIEW_DATE" >= TRUNC(SYSDATE)-35 AND R."APPR_REVIEW_DATE" <= SYSDATE',
 'union',
@@ -10323,10 +10325,12 @@ wwv_flow_api.create_page_plug(
 'R."EXPLANATION",',
 'R."ALT_PROTECTIONS",',
 'R."APPR_REVIEW_DATE",',
-'E."NAME" AS "REQUESTED BY",',
+'E2."NAME" AS "REQUESTED BY",',
 'S."STATUS"',
 'from "#OWNER#"."F15E1_RFE" R JOIN "#OWNER#"."F15E1_STATUS" S ON ',
-' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID",',
+' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
+'  JOIN "F15E1_EMP" E2 ON',
+' E2."EMP_ID" = R."F15E1_EMP_EMP_ID",',
 ' "#OWNER#"."F15E1_EMP" E JOIN "#OWNER#"."F15E1_AUTH" A ',
 ' ON A."AUTH_ID" = E."F15E1_AUTH_AUTH_ID"',
 'WHERE E.EMP_ID = :P2_EMP AND (A."RIGHT" = ''Read'' or A."RIGHT" = ''edit'') ',
@@ -10455,7 +10459,7 @@ wwv_flow_api.create_page_plug(
 'R."EXPLANATION",',
 'R."ALT_PROTECTIONS",',
 'R."APPR_REVIEW_DATE",',
-'E."NAME" AS "REQUESTED BY",',
+'E2."NAME" AS "REQUESTED BY",',
 'S."STATUS"',
 'from "#OWNER#"."F15E1_RFE" R JOIN "#OWNER#"."F15E1_CONTACT_RFE" C',
 ' on C."F15E1_RFE_RFE_ID" = R."RFE_ID"',
@@ -10463,6 +10467,8 @@ wwv_flow_api.create_page_plug(
 ' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
 ' JOIN "F15E1_EMP" E ON',
 ' E."EMP_ID" = C."F15E1_EMP_EMP_ID"',
+'  JOIN F15E1_EMP E2 ON ',
+' E2."EMP_ID" = R."F15E1_EMP_EMP_ID"',
 'WHERE E.EMP_ID = :P2_EMP ',
 'AND R."APPR_REVIEW_DATE" <= TRUNC(SYSDATE)+35 AND R."APPR_REVIEW_DATE" >= SYSDATE',
 'union',
@@ -10471,10 +10477,12 @@ wwv_flow_api.create_page_plug(
 'R."EXPLANATION",',
 'R."ALT_PROTECTIONS",',
 'R."APPR_REVIEW_DATE",',
-'E."NAME" AS "REQUESTED BY",',
+'E2."NAME" AS "REQUESTED BY",',
 'S."STATUS"',
 'from "#OWNER#"."F15E1_RFE" R JOIN "#OWNER#"."F15E1_STATUS" S ON ',
-' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID",',
+' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
+'  JOIN F15E1_EMP E2 ON ',
+' E2."EMP_ID" = R."F15E1_EMP_EMP_ID",',
 ' "#OWNER#"."F15E1_EMP" E JOIN "#OWNER#"."F15E1_AUTH" A ',
 ' ON A."AUTH_ID" = E."F15E1_AUTH_AUTH_ID"',
 'WHERE E.EMP_ID = :P2_EMP AND (A."RIGHT" = ''Read'' or A."RIGHT" = ''edit'') ',
@@ -10595,14 +10603,14 @@ wwv_flow_api.create_page_plug(
 ' on R."F15E1_EMP_EMP_ID" = E."EMP_ID"',
 ' JOIN "#OWNER#"."F15E1_STATUS" S ON ',
 ' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
-'WHERE EMP_ID = :P2_EMP',
+'WHERE E.EMP_ID = :P2_EMP',
 'union',
 'select R."RFE_ID", ',
 'R."NAME",',
 'R."EXPLANATION",',
 'R."ALT_PROTECTIONS",',
 'R."APPR_REVIEW_DATE",',
-'E."NAME" AS "REQUESTED BY",',
+'E2."NAME" AS "REQUESTED BY",',
 'S."STATUS"',
 'from "#OWNER#"."F15E1_RFE" R JOIN "#OWNER#"."F15E1_CONTACT_RFE" C',
 ' on C."F15E1_RFE_RFE_ID" = R."RFE_ID"',
@@ -10610,6 +10618,8 @@ wwv_flow_api.create_page_plug(
 ' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
 ' JOIN "F15E1_EMP" E ON',
 ' E."EMP_ID" = C."F15E1_EMP_EMP_ID"',
+'  JOIN F15E1_EMP E2 ON ',
+' E2."EMP_ID" = R."F15E1_EMP_EMP_ID"',
 'WHERE E.EMP_ID = :P2_EMP ',
 'union',
 'select R."RFE_ID", ',
@@ -10617,13 +10627,15 @@ wwv_flow_api.create_page_plug(
 'R."EXPLANATION",',
 'R."ALT_PROTECTIONS",',
 'R."APPR_REVIEW_DATE",',
-'E."NAME" AS "REQUESTED BY",',
+'E2."NAME" AS "REQUESTED BY",',
 'S."STATUS"',
 'from "#OWNER#"."F15E1_RFE" R JOIN "#OWNER#"."F15E1_STATUS" S ON ',
-' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID",',
+' S."STATUS_ID" = R."F15E1_STATUS_STATUS_ID"',
+'  JOIN F15E1_EMP E2 ON ',
+' E2."EMP_ID" = R."F15E1_EMP_EMP_ID",',
 ' "#OWNER#"."F15E1_EMP" E JOIN "#OWNER#"."F15E1_AUTH" A ',
 ' ON A."AUTH_ID" = E."F15E1_AUTH_AUTH_ID"',
-'WHERE E.EMP_ID = :P2_EMP AND (A."RIGHT" = ''Read'' or A."RIGHT" = ''edit'')'))
+'WHERE E.EMP_ID = :P2_EMP AND (A."RIGHT" = ''Read'' or A."RIGHT" = ''edit'') '))
 ,p_plug_source_type=>'NATIVE_IR'
 ,p_plug_query_row_template=>1
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'

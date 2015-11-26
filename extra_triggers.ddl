@@ -133,3 +133,27 @@ BEGIN
 
 END F15E1_Status_Trig2;
 /
+
+CREATE OR REPLACE PROCEDURE duplicate_RFE
+(
+  rfe_id_param NUMBER
+)
+AS
+  new_rfe_id NUMBER;
+  new_name VARCHAR2(30);
+  new_explanation VARCHAR2(4000);
+  new_alt_protections VARCHAR2(4000);
+  new_emp_id NUMBER;
+BEGIN
+  new_rfe_id := F15E1_RFE_seq.nextval;
+  SELECT name || ' (duplicate)' INTO new_name FROM f15e1_rfe WHERE rfe_id = rfe_id_param;
+  SELECT explanation INTO new_explanation FROM f15e1_rfe WHERE rfe_id = rfe_id_param;
+  SELECT alt_protections INTO new_alt_protections FROM f15e1_rfe WHERE rfe_id = rfe_id_param;
+  SELECT f15e1_emp_emp_id INTO new_emp_id FROM f15e1_rfe WHERE rfe_id = rfe_id_param;
+
+  INSERT INTO F15E1_RFE (RFE_ID, NAME, EXPLANATION, ALT_PROTECTIONS, APPR_REVIEW_DATE, F15E1_STATUS_STATUS_ID, F15E1_EMP_EMP_ID) VALUES
+        (new_rfe_id, new_name, new_explanation, new_alt_protections, NULL, 1, new_emp_id);
+  INSERT INTO F15E1_StatHis (HIST_ID, F15E1_RFE_RFE_ID, STATUS, DESCRIPTION, EFF_DATE, ENTERED_BY_EMP) VALUES
+        (1, new_rfe_id, 'Entered', 'The RFE has been created but has not yet been submitted for approval.', SYSDATE, new_emp_id);
+END;
+/
